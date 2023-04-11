@@ -19,7 +19,7 @@ constructor (
     createPokemonDto.name = createPokemonDto.name.toLocaleLowerCase()
     
     try {
-      const pokemon = await this.pokemonModel.create(createPokemonDto);
+      const pokemon = await this.pokemonModel.create(createPokemonDto)
 
       return pokemon;
 
@@ -85,6 +85,8 @@ constructor (
           throw new BadRequestException(`Pokemon with id ${ id } not found`);
     return;
   }
+
+  
 
   private errorHandler(error: any){
 
